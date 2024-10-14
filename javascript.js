@@ -40,5 +40,17 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
+function playGame(){
+    let keepGoing = true;
+    while(keepGoing){
+        playRound(getHumanChoice(), getComputerChoice())
+        if(humanScore == 5 || computerScore == 5){
+            keepGoing = false;
+        }
+    }
+    console.log("Final Score -> You: " + humanScore + " Computer: " + computerScore)
+}
+
+
 
 
