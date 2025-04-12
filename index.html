@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="javascript.js"></script>
+    <link rel="stylesheet" href="styles.css">
     <title>Rock, Paper, Scissor?</title>
 </head>
 <body>
 
     <main>
-        <div>
-            <button id="rock">Rock</button>
-            <button id="paper">Paper</button>
-            <button id="scissor">Scissor</button>
+        <div class="game-container">
+            
+            <div class="choices">
+                <button id="rock" class="choice-btn">Rock</button>
+                <button id="paper" class="choice-btn">Paper</button>
+                <button id="scissor" class="choice-btn">Scissors</button>
+            </div>
+
+            <div class="scoreboard">
+                <p class="score">You: 0 | Computer: 0</p>
+                <p class="result">Make your choice!</p>
+            </div>
         </div>
-        <div>
-            <p class="score">You: 0 Computer: 0</p>
-            <p class="result"></p>
-        </div>
-        
     </main>
     
 </body>
