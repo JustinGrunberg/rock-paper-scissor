@@ -23,15 +23,15 @@ function playRound(humanChoice, computerChoice){
         switch (humanChoice + " beats " + computerChoice){
             case "rock beats scissor":
                 humanScore++;
-                console.log("You Win! Rock beats Scissor");
+                console.log("You Win! rock beats scissor");
                 break;
             case "paper beats rock":
                 humanScore++;
-                console.log("You Win! Paper beats Rock");
+                console.log("You Win! paper beats rock");
                 break;
             case "scissor beats paper":
                 humanScore++;
-                console.log("You Win! Scissor beats Paper");
+                console.log("You Win! scissor beats paper");
                 break;
             default:
                 computerScore++;
@@ -50,6 +50,16 @@ function playGame(){
     }
     console.log("Final Score -> You: " + humanScore + " Computer: " + computerScore)
 }
+
+let main = document.querySelector('main')
+main.addEventListener('click', (event) => {
+    if(event.target.tagName === 'BUTTON'){
+        let humanChoice = event.target.textContent.toLowerCase()
+        let computerChoice = getComputerChoice()
+        playRound(humanChoice, computerChoice)
+        
+    }
+})
 
 
 
