@@ -2,6 +2,10 @@ let answers = ["rock", "paper", "scissor"]
 let humanScore = 0;
 let computerScore = 0;
 
+let main = document.querySelector('main')
+let result = document.querySelector('.result')
+let score = document.querySelector('.score')
+
 function getComputerChoice(){
     let randomNumber = Math.floor(Math.random() * 3)
     return answers[randomNumber];
@@ -17,25 +21,25 @@ function getHumanChoice(){
 function playRound(humanChoice, computerChoice){
 
     if(humanChoice === computerChoice){
-        console.log("Tie! " + humanChoice + " equals " + computerChoice);
+        result.textContent = "Tie! " + humanChoice + " equals " + computerChoice;
     }
     else{
         switch (humanChoice + " beats " + computerChoice){
             case "rock beats scissor":
                 humanScore++;
-                console.log("You Win! rock beats scissor");
+                result.textContent = "You Win! rock beats scissor";
                 break;
             case "paper beats rock":
                 humanScore++;
-                console.log("You Win! paper beats rock");
+                result.textContent = "You Win! paper beats rock";
                 break;
             case "scissor beats paper":
                 humanScore++;
-                console.log("You Win! scissor beats paper");
+                result.textContent = "You Win! scissor beats paper";
                 break;
             default:
                 computerScore++;
-                console.log("You Lose! " + computerChoice + " beats " + humanChoice);
+                result.textContent = "You Lose! " + computerChoice + " beats " + humanChoice;
         }
     }
 }
@@ -51,13 +55,13 @@ function playGame(){
     console.log("Final Score -> You: " + humanScore + " Computer: " + computerScore)
 }
 
-let main = document.querySelector('main')
+
 main.addEventListener('click', (event) => {
     if(event.target.tagName === 'BUTTON'){
         let humanChoice = event.target.textContent.toLowerCase()
         let computerChoice = getComputerChoice()
         playRound(humanChoice, computerChoice)
-        
+        score.textContent = 'You: ' + humanScore + ' Computer: ' + computerScore 
     }
 })
 
